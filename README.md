@@ -63,7 +63,7 @@ Live Host Scanning (In Progress)
 Directory Scanning (In Progress)
 SSH Dictionary Attack on target Server (In Progress)
 
-#To Execute use below commands
+# To Execute use below commands
 source venv/bin/activate
 python manage.py runserver
 
