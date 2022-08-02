@@ -21,7 +21,8 @@ Secure web application penetration testing (SWAPT) tool is a web based online we
 Web applications are typically developed with hard time constraints and are often deployed with security vulnerabilities. SWAPT Web vulnerability scanner can help to locate these vulnerabilities.
 Administrators can use the tool for fixing or exploiting a system, administrators need to conduct a scan and fix problems before an attacker can do the same scan and exploit any vulnerability.
 
-#Project Scope
+# Project Scope
+
 Our project will be able to:
 scan, detect vulnerabilities.
 analyze the response from web applications and detect vulnerabilities.
