@@ -1,0 +1,5 @@
+#!/home/kali/FYP (SWAPTT) - Batch 2018/swapt/venv/bin/python3
+from proxy_db.cli import main
+
+if __name__ == "__main__":
+    main()

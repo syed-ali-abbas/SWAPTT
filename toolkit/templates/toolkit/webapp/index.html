@@ -1,0 +1,100 @@
+{% extends "toolkit/base.html" %}
+
+{% block content %}
+{% load static %}
+<title>
+    {% block title %}
+        WebApplications - SWAPT
+    {% endblock %}
+</title>
+<link rel="stylesheet" type="text/css" href="{% static "toolkit/css/webapp_menu.css" %}" media="all"/>
+<link rel="stylesheet" type="text/css" href="{% static "toolkit/css/dashboard.css" %}" media="all" />
+<body>
+<br><br><br>
+<br><br><br>
+<div class="row">
+  <div class="col">
+    <h2 style="color:#ffb54d">Web Application Section <sup>1.0</sup></h2>
+    <div class="tabs">
+      <div class="tab">
+        <input  id="chck1">
+        <label class="tab-label" for="chck1">
+            <a href="{% url 'verbtamper' %}"><p class="w3-medium scans" style="position:relative;">
+                HTTP Verb Tampering
+            </p></a></label>
+      </div>
+    </div>
+<!--        <div class="tab-content">
+            <a href="{% url 'verbtamper' %}"><p class="w3-medium scans" style="position:relative;">
+                <span class="w3-hide-small ">
+                    <b>HTTP Verb Tampering</b> tests the web application's response to different HTTP methods accessing system objects.
+                </span></p></a>-->
+    <div class="tabs">
+      <div class="tab">
+        <input  id="chck1">
+        <label class="tab-label" for="chck1">
+            <a href="{% url 'webcrawler' %}"><p class="w3-medium scans" style="position:relative;">
+                Web Crawler for gathering URLs
+            </p></a></label>
+      </div>
+    </div>
+
+    <div class="tabs">
+      <div class="tab">
+        <input  id="chck1">
+        <label class="tab-label" for="chck1">
+            <a href="{% url 'subdomain' %}"><p class="w3-medium scans" style="position:relative;">
+                Enumerate Subdomains
+            </p></a></label>
+      </div>
+    </div>
+    
+
+
+<div class="tabs">
+      <div class="tab">
+        <input  id="chck1">
+        <label class="tab-label" for="chck1">
+            <a href="{% url 'subdomainTakeover' %}"><p class="w3-medium scans" style="position:relative;">
+                Subdomain Takeover Check
+            </p></a></label>
+      </div>
+    </div>
+    
+    <div class="tabs">
+      <div class="tab">
+        <input  id="chck1">
+        <label class="tab-label" for="chck1">
+            <a href="{% url 'corsy' %}"><p class="w3-medium scans" style="position:relative;">
+            Cross Origin Resource Sharing
+            </p></a></label>
+      </div>
+    </div>
+    
+    
+    <div class="tabs">
+      <div class="tab">
+        <input  id="chck1">
+        <label class="tab-label" for="chck1">
+            <a href="{% url 'sqli' %}"><p class="w3-medium scans" style="position:relative;">
+            SQL Injection
+            </p></a></label>
+      </div>
+    </div>
+    <div class="tabs">
+      <div class="tab">
+        <input  id="chck1">
+        <label class="tab-label" for="chck1">
+            <a href="{% url 'xss' %}"><p class="w3-medium scans" style="position:relative;">
+            Cross Site Scripting
+            </p></a></label>
+      </div>
+    </div>
+    
+    
+
+    </div>
+  </div>
+</div>
+</html>
+{% endblock %}

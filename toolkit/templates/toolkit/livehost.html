@@ -1,0 +1,64 @@
+{% extends "toolkit/base.html" %}
+
+{% block content %}
+{% load static %}
+
+<title>
+    {% block title %}
+        LiveHosts - SWAPT
+    {% endblock %}
+</title>
+<link rel="stylesheet" type="text/css" href="{% static "toolkit/css/dashboard.css" %}" media="all" />
+
+<br><br><br><br><br><br><br><br><br><br>
+
+<form autocomplete='off' class='form' method="POST">
+ {% csrf_token %}
+  <div class='control'>
+    <h1>
+      Live Hosts Scanner
+    </h1>
+  </div>
+  <div class='control block-cube block-input'>
+    <input name='ip' placeholder='Enter Hostname or IP' type='text' required>
+    <div class='bg-top'>
+      <div class='bg-inner'></div>
+    </div>
+    <div class='bg-right'>
+      <div class='bg-inner'></div>
+    </div>
+    <div class='bg'>
+      <div class='bg-inner'></div>
+    </div>
+  </div>
+
+  <button class='btn block-cube block-cube-hover' type='submit'>
+    <div class='bg-top'>
+      <div class='bg-inner'></div>
+    </div>
+    <div class='bg-right'>
+      <div class='bg-inner'></div>
+    </div>
+    <div class='bg'>
+      <div class='bg-inner'></div>
+    </div>
+    <div class='text'>
+      Start
+    </div>
+  </button>
+    <b><p>
+      Example:
+    </p></b>
+    <p>
+      192.168.1.0 or target.com
+    </p>
+  
+</form>
+
+ {% if error %}
+     <div class="alert alert-danger" role="alert">
+         {{ error }}
+     </div>
+ {% endif %}
+
+{% endblock %}

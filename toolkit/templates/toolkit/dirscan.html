@@ -1,0 +1,75 @@
+{% extends "toolkit/base.html" %}
+{% block content %}
+{% load static %}
+<head>
+    <title>
+    {% block title %}
+        DirScan - SWAPT
+    {% endblock %}
+    </title>
+<link rel="stylesheet" type="text/css" href="{% static "toolkit/css/dashboard.css" %}" media="all" />
+</head>
+<br><br><br><br><br><br><br><br><br><br>
+<body>
+<form autocomplete='off' class='form' method="POST">
+ {% csrf_token %}
+  <div class='control'>
+    <h1>
+      Directory Scanner
+    </h1>
+  </div>
+  <div class='control block-cube block-input'>
+    <input name='ip' placeholder='Enter Hostname or IP' type='text' required>
+    <div class='bg-top'>
+      <div class='bg-inner'></div>
+    </div>
+    <div class='bg-right'>
+      <div class='bg-inner'></div>
+    </div>
+    <div class='bg'>
+      <div class='bg-inner'></div>
+    </div>
+  </div>
+
+  <button class='btn block-cube block-cube-hover' type='submit'>
+    <div class='bg-top'>
+      <div class='bg-inner'></div>
+    </div>
+    <div class='bg-right'>
+      <div class='bg-inner'></div>
+    </div>
+    <div class='bg'>
+      <div class='bg-inner'></div>
+    </div>
+    <div class='text'>
+      Start
+    </div>
+  </button>
+    <h6>
+      Example:
+    </h6>
+    <h6>
+      192.168.1.8 or www.target.com
+    </h6>
+</form>
+{{ response }}
+<script>
+    var eventsource = new EventSource("{% url 'dirscan'%}")
+    eventsource.onopen = function(){
+        console.log("Connection opened");
+    }
+    eventsource.onmessage = function () {
+        console.log(e);
+    }
+    eventsource.onerror = function (){
+        console.log('error:')
+    }
+</script>
+
+ {% if error %}
+     <div class="alert alert-danger" role="alert">
+         {{ error }}
+     </div>
+ {% endif %}
+</body>
+{% endblock %}

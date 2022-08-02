@@ -1,0 +1,58 @@
+{% extends "toolkit/base.html" %}
+{% block content %}
+    <title>
+    {% block title %}
+        Download Report - SWAPT
+    {% endblock %}
+    </title>
+{% load static %}
+  <head>
+    <title>Download Report</title>
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="{% static 'toolkit/css/font-awesome.css'%}">
+    <link rel="stylesheet" href="{% static 'toolkit/css/templatemo-training-studio.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static "toolkit/css/download_page.css" %}" media="all">
+    </head>
+
+    <body>
+    <!-- ***** Preloader Start ***** -->
+    <div id="js-preloader" class="js-preloader">
+      <div class="preloader-inner">
+        <span class="dot"></span>
+        <div class="dots">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+    <!-- ***** Preloader End ***** -->
+
+
+    <!-- ***** Main Banner Area Start ***** -->
+    <div class="video-overlay main-banner" id="top">
+        <img src="{% static 'toolkit/images/background_hand.jpg'%}" id="bg-video">
+
+
+        <div class="video-overlay header-text">
+            <div class="caption">
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                <h3>Process Finished!</h3><br>
+                <button class="button button2">
+                    <a href="{% url 'download_file' %}">Download Report</a>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- ***** Main Banner Area End ***** -->
+    <!-- jQuery -->
+    <script src="{% static 'toolkit/js/jquery-2.1.0.min.js'%}"></script>
+    <!-- Plugins -->
+    <script src="{% static 'toolkit/js/scrollreveal.min.js'%}"></script>
+    <!-- Global Init -->
+    <script src="{% static 'toolkit/js/custom.js' %}"></script>
+
+  </body>
+</html>
+
+{% endblock %}

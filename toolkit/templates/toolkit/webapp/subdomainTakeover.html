@@ -1,0 +1,79 @@
+{% extends "toolkit/base.html" %}
+
+{% block content %}
+{% load static %}
+<head>
+<title>
+    {% block title %}
+        Subdomain Finder - SWAPT
+    {% endblock %}
+    
+</title>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body>
+
+
+
+<section style="padding: 10% 20% 0 30%;">
+{% if error %}
+    <h2 style="text-align:center">{{ error }}</h2>
+{% endif %}
+  <div class="tbl-header">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <thead>
+        <tr>
+          <th>URLs</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+{% if results %}
+<div class="tbl-content">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <tbody>
+        <tr>
+            {% for url in results %}
+          <td>{{url}}</td>
+        </tr>
+      </tbody>
+            {% endfor %}
+    </table>
+</div>
+{% endif %}
+
+
+
+</section>
+
+
+
+
+</body>
+
+<!-- <div class="made-with-love">
+  Made By
+  <i>♥</i> by
+  <a target="_blank" href="https://github.com/signorrayan">Signor</a>
+</div> -->
+</html>
+
+{% endblock %}
+
+

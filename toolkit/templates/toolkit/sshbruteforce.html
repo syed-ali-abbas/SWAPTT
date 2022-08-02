@@ -1,0 +1,67 @@
+{% extends "toolkit/base.html" %}
+
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<link rel="stylesheet" type="text/css" href="{% static "toolkit/css/sshrdp.css" %}" media="all" />
+
+<title>
+    {% block title %}
+        SSH Dictionary - SWAPT
+    {% endblock %}
+</title>
+<br><br><br><br><br><br><br><br>
+{% if result %}
+    <div class="center container">
+        <table id="t01" <table id="t01" style="margin-left:30%;margin-right:25%">
+            <tr>
+                <th style="text-align:center">Hostname</th>
+                <th style="text-align:center">Port</th>
+                <th style="text-align:center">Username</th>
+                <th style="text-align:center">Password</th>
+            </tr>
+            <tr>
+                <td style="text-align:center">{{ result.hostname }}</td>
+                <td style="text-align:center">{{ result.port }}</td>
+                <td style="text-align:center">{{ result.username }}</td>
+                <td style="text-align:center">{{ result.password }}</td>
+            </tr>
+        </table>
+    </div>
+{% elif error %}
+     <br><div class="text--center" role="alert">
+         <h5>{{ error }}</h5>
+     </div>
+ {% endif %}
+<br><br>
+<body class="align">
+  <div class="grid">
+    <h4 class="form">SSH Dictionary Attack</h4>
+    <form method="POST" class="form login">
+      {% csrf_token %}
+      <div class="form__field">
+        <span class="hidden">Username</span>
+        <input autocomplete="username" id="login__username" type="text" name="username" class="form__input" placeholder="Username" required>
+      </div>
+
+      <div class="form__field">
+        <span class="hidden">Ip</span>
+        <input  type="text" name="ip" class="form__input" placeholder="IP" required>
+      </div>
+
+      <div class="form__field">
+        <span class="hidden">Port</span>
+        <input  type="text" name="port" class="form__input" placeholder="PORT" required>
+      </div>
+
+      <div class="form__input">
+        <input type="submit" value="Start">
+      </div>
+
+    </form>
+
+
+
+</div>
+</body>
+{% endblock %}
