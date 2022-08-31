@@ -31,7 +31,7 @@ show the results of vulnerability which is easily understood without extensive k
 # How SWAPT is different?
 ![image](https://user-images.githubusercontent.com/97851226/182014849-8f4cb29c-e3c6-4e3d-93d2-11286e239e1d.png)
 
-# Methodolog
+# Methodology
 ![image](https://user-images.githubusercontent.com/97851226/182014872-0a96eb5b-2f86-42fe-a68f-e5b6801eb948.png)
 
 # Technologies to be used
@@ -64,7 +64,7 @@ Directory Scanning (In Progress)
 SSH Dictionary Attack on target Server (In Progress)
 
 # To Execute use below commands
-source venv/bin/activate
+source venv/bin/activate </br>
 python manage.py runserver
 
 
